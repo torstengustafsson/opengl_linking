@@ -35,10 +35,6 @@ add_subdirectory(ext/glew/build/cmake)
 ## add glfw
 add_subdirectory(ext/glfw)
 
-## add glm
-set(GLM_TEST_ENABLE OFF)
-add_subdirectory(ext/glm)
-
 target_link_libraries(MyLinkedProgram
   PRIVATE glew
   PRIVATE glfw
