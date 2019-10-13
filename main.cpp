@@ -33,5 +33,6 @@ int main() {
     glfwDestroyWindow(window);
     glfwTerminate();
 
+    std::cout << "Success!\n";
     return 0;
 }

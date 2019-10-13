@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 3.0)
 
 project(ALinkToTheOpenGLStuff)
 
-# set(CMAKE_DISABLE_IN_SOURCE_BUILD ON)
-# set(CMAKE_DISABLE_SOURCE_CHANGES  ON)
-
 # Require the use of a "build" directory or similar for builds to avoid newbies cluttering up their source tree
 if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
   message(SEND_ERROR "In-source builds are not allowed.")
@@ -33,19 +30,6 @@ set_target_properties (MyLinkedProgram
 
 ## add glew
 # Note: Builds both shared and static libraries. There is sadly no option to only build one or the other
-
-# add_custom_command(
-#   TARGET MyLinkedProgram
-#   PRE_BUILD
-#   COMMAND /bin/sh GLEW_USE_STATIC_LIBS=ON ext/glew/cmake-testbuild.sh
-# )
-
-# copy .dll files to bin directory
-if (CMAKE_BUILD_TYPE MATCHES DEBUG)
-  install(FILES ${PROJECT_SOURCE_DIR}/ext/glew/out/bin/glew32d.dll DESTINATION bin)
-else()
-  install(FILES ${PROJECT_SOURCE_DIR}/ext/glew/out/bin/glew32.dll DESTINATION bin)
-endif()
 add_subdirectory(ext/glew/build/cmake)
 
 ## add glfw

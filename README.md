@@ -18,6 +18,8 @@ Requirements:
   nature of being a wrapper to low level functions on the OS level.)
 
 Instuctions:
-1. Navigate to ext/glew/auto directory and run make. (for Windows, use Cygwin. Windows filesystem can be accessed from
+1. Clone and cd to repo
+2. Run "git submodule init" followed by "git submodule update"
+2. Navigate to ext/glew/auto directory and run make. (for Windows, use Cygwin. Windows filesystem can be accessed from
    "/cygdrive")
-2. Generate the code with CMake in a good place, for example "build/".
+3. Generate the code with CMake in a good place, for example "build/".
