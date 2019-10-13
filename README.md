@@ -24,3 +24,5 @@ Instructions:
 2. Navigate to ext/glew/auto directory and run make. (for Windows, use Cygwin. Windows filesystem can be accessed from
    "/cygdrive")
 3. Generate the code with CMake in a good place, for example "build/".
+4. Build the project and run the resulting executable. If it outputs "Success!" you have successfully linked your
+   OpenGl project.
