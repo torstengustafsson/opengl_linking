@@ -8,4 +8,16 @@ It takes the official github repos of these projects as submodules, to allow sim
 It is intended to work out of the box on linux, windows mac, etc. with whatever compiler you fancy
 (as long as it is supported by CMAKE).
 
-Requirements: A CMake-supported compiler, any GPU with OpenGL support, and CMake 3.?? installed.
+Requirements:
+* A CMake-supported compiler
+* GPU with OpenGL support
+* CMake >=3.0
+* make tool for GLEW source code generation. When running Windows Cygwin (https://www.cygwin.com/setup-x86_64.exe) can
+  be installed to make them. Just remember to select "make" and "perl" as packages to install at installation window.
+  (why is this necessary? I have not found any good sources answering that question. I guess it's because of GLEW:s
+  nature of being a wrapper to low level functions on the OS level.)
+
+Instuctions:
+1. Navigate to ext/glew/auto directory and run make. (for Windows, use Cygwin. Windows filesystem can be accessed from
+   "/cygdrive")
+2. Generate the code with CMake in a good place, for example "build/".
