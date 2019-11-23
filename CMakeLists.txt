@@ -9,6 +9,9 @@ endif ()
 
 add_executable (MyLinkedProgram "main.cpp")
 
+# make sure the gl context is linked together at compile time
+# target_compile_definitions(MyLinkedProgram PRIVATE GLEW_STATIC=1)
+
 # add OpenGL
 find_package(OpenGL REQUIRED)
 
@@ -19,8 +22,8 @@ target_include_directories (MyLinkedProgram
   PRIVATE ${PROJECT_SOURCE_DIR}/ext/glm
 )
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# Set up paths so lib files and program is put together. (in this case only bin dir
+# is used, add archive and library output dirs for completeness)
 set_target_properties (MyLinkedProgram
   PROPERTIES
   ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"

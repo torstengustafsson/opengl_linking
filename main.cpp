@@ -16,6 +16,7 @@ int main() {
     GLFWwindow* window = glfwCreateWindow(640, 480, "My Title", NULL, NULL);
     if (!window) {
         std::cout << "Window or OpenGL context creation failed\n";
+        glfwTerminate();
         return 1;
     }
     glfwMakeContextCurrent(window);
@@ -28,6 +29,17 @@ int main() {
 
     // Verify GLM functions are linked correctly
     glm::mat4 Projection = glm::perspective(45.0f, 1.0f, 0.1f, 100.0f);
+
+    if (GLEW_VERSION_3_0) {
+        std::cout << "GLEW version 3.0 is defined!\n";
+    }
+
+    GLuint m_programID = glCreateProgram();
+
+    if (!m_programID) {
+        std::cout << "Failed to create OpenGL program\n";
+        return 1;
+    }
 
     // Cleanup
     glfwDestroyWindow(window);
